@@ -1,0 +1,27 @@
+﻿@page
+@model AspNetCoreBeginnersCourseByMva.Pages.Customers.IndexModel
+
+<h2>All Customers</h2>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        @foreach (var customer in Model.AllCustomers)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.Name</td>
+                <td>
+                    <a asp-route-id="@customer.Id" asp-page="./Edit">Edit</a>
+                    <button type="submit" asp-page-handler="delete" asp-route-id="@customer.Id">Delete</button>
+                </td>
+            </tr>
+
+        }
+    </table>
+</form>
+<a asp-page="./Create">Create New</a> 

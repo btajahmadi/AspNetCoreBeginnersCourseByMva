@@ -1,0 +1,15 @@
+﻿@page "{id:Guid}"
+@model AspNetCoreBeginnersCourseByMva.Pages.Customers.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit Customer</h2>
+<form method="post">
+    <input asp-for="Customer.Id" type="hidden" />
+    <input asp-for="Customer.Name" />
+    <button type="submit">Save</button>
+
+</form>
+
+
